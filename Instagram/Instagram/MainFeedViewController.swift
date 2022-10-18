@@ -42,6 +42,7 @@ extension MainFeedViewController: UITableViewDataSource {
         var cell = UITableViewCell()
         switch indexPath.row {
         case 0: cell = tableView.dequeueReusableCell(withIdentifier: "FeedCell", for: indexPath)
+        case 3: cell = tableView.dequeueReusableCell(withIdentifier: "SuggestedYou", for: indexPath)
         default: cell = tableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath)
         }
         return cell
