@@ -1,5 +1,5 @@
 //
-//  MainFeedViewController.swift
+//  FeedViewController.swift
 //  Instagram
 //
 //  Created by Дмитрий Супрун on 17.10.22.
@@ -8,7 +8,7 @@
 import UIKit
 
 /// Present new posts, recommendation, story feed
-final class MainFeedViewController: UIViewController {
+final class FeedViewController: UIViewController {
     // MARK: - Constants
     enum Constants {
         static let feedCellID = "FeedCell"
@@ -48,7 +48,7 @@ final class MainFeedViewController: UIViewController {
 
 // MARK: - UITableViewDataSource
 
-extension MainFeedViewController: UITableViewDataSource {
+extension FeedViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         5
     }
