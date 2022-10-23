@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Main Feed View Controller-->
+        <!--Feed View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="MainFeedViewController" customModule="Instagram" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="FeedViewController" customModule="Instagram" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -344,13 +344,13 @@
                                             <rect key="frame" x="0.0" y="0.0" width="358" height="310"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="A0M-10-Jpj">
+                                                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A0M-10-Jpj">
                                                     <rect key="frame" x="0.0" y="0.0" width="358" height="310"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="lbD-y6-O3O">
                                                             <rect key="frame" x="0.0" y="30" width="550" height="200"/>
                                                             <subviews>
-                                                                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="o2m-f8-d5B">
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o2m-f8-d5B">
                                                                     <rect key="frame" x="0.0" y="0.0" width="180" height="200"/>
                                                                     <subviews>
                                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nYy-Ru-rma">
@@ -373,7 +373,7 @@
                                                                                 </userDefinedRuntimeAttribute>
                                                                             </userDefinedRuntimeAttributes>
                                                                         </imageView>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Follows You" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Yt-Hv-aas">
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Follows You" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Yt-Hv-aas">
                                                                             <rect key="frame" x="8" y="138" width="164" height="11"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="9"/>
                                                                             <nil key="textColor"/>
@@ -400,7 +400,7 @@
                                                                         </userDefinedRuntimeAttribute>
                                                                     </userDefinedRuntimeAttributes>
                                                                 </view>
-                                                                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ggk-b1-Jiu">
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ggk-b1-Jiu">
                                                                     <rect key="frame" x="185" y="0.0" width="180" height="200"/>
                                                                     <subviews>
                                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RK8-g4-evW">
@@ -423,7 +423,7 @@
                                                                                 </userDefinedRuntimeAttribute>
                                                                             </userDefinedRuntimeAttributes>
                                                                         </imageView>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Follows You" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C5W-pY-dNt">
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Follows You" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C5W-pY-dNt">
                                                                             <rect key="frame" x="8" y="138" width="164" height="11"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="9"/>
                                                                             <nil key="textColor"/>
@@ -450,7 +450,7 @@
                                                                         </userDefinedRuntimeAttribute>
                                                                     </userDefinedRuntimeAttributes>
                                                                 </view>
-                                                                <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yh5-dX-7of">
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yh5-dX-7of">
                                                                     <rect key="frame" x="370" y="0.0" width="180" height="200"/>
                                                                     <subviews>
                                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KjX-CI-fnO">
@@ -473,7 +473,7 @@
                                                                                 </userDefinedRuntimeAttribute>
                                                                             </userDefinedRuntimeAttributes>
                                                                         </imageView>
-                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Follows You" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R6X-zI-Anr">
+                                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Follows You" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R6X-zI-Anr">
                                                                             <rect key="frame" x="8" y="138" width="164" height="11"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="9"/>
                                                                             <nil key="textColor"/>
@@ -506,8 +506,8 @@
                                                                 <constraint firstAttribute="height" constant="200" id="Jm6-kS-Hp8"/>
                                                             </constraints>
                                                         </stackView>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Suggested You" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LAN-eO-U2Y">
-                                                            <rect key="frame" x="8" y="8" width="150" height="20.333333333333329"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Suggested You" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LAN-eO-U2Y">
+                                                            <rect key="frame" x="8" y="7.9999999999999982" width="150" height="20.333333333333329"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="150" id="gN8-pb-U7E"/>
                                                             </constraints>
@@ -647,7 +647,7 @@
                                     <navigationItem title="Notifications" id="Uf5-wJ-WtU"/>
                                 </items>
                             </navigationBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="tRm-ne-rwS">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="tRm-ne-rwS">
                                 <rect key="frame" x="0.0" y="91" width="390" height="670"/>
                                 <color key="backgroundColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
@@ -687,7 +687,10 @@
                                                     <buttonConfiguration key="configuration" style="plain" image="xmark" catalog="system"/>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CtI-ae-BbD">
-                                                    <rect key="frame" x="260" y="10" width="77" height="34.333333333333336"/>
+                                                    <rect key="frame" x="260" y="14.666666666666664" width="77" height="25"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="25" id="80P-ym-Kmi"/>
+                                                    </constraints>
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="filled" title="Follow"/>
                                                 </button>
@@ -703,7 +706,7 @@
                                                 <constraint firstItem="Avt-ZA-4zQ" firstAttribute="centerY" secondItem="1UR-jv-0n6" secondAttribute="centerY" id="2Bl-zv-WvU"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="b2b-D6-Yo3" secondAttribute="trailing" id="2Qp-Ul-H5e"/>
                                                 <constraint firstItem="Avt-ZA-4zQ" firstAttribute="trailing" secondItem="1UR-jv-0n6" secondAttribute="trailingMargin" priority="751" identifier="toSuperViewConstraintID" id="EVg-0a-n6B"/>
-                                                <constraint firstItem="CtI-ae-BbD" firstAttribute="top" secondItem="1UR-jv-0n6" secondAttribute="top" constant="10" id="H8d-yw-wRm"/>
+                                                <constraint firstItem="CtI-ae-BbD" firstAttribute="centerY" secondItem="Avt-ZA-4zQ" secondAttribute="centerY" id="FH5-dh-fCt"/>
                                                 <constraint firstItem="Avt-ZA-4zQ" firstAttribute="leading" secondItem="Fhd-KO-Y8g" secondAttribute="trailing" constant="8" symbolic="YES" id="Q06-Vg-soS"/>
                                                 <constraint firstItem="b2b-D6-Yo3" firstAttribute="centerY" secondItem="CtI-ae-BbD" secondAttribute="centerY" id="TbA-gf-LTg"/>
                                                 <constraint firstItem="b2b-D6-Yo3" firstAttribute="leading" secondItem="CtI-ae-BbD" secondAttribute="trailing" constant="8" symbolic="YES" identifier="toCancelButtonConstraintID" id="czt-uU-Iq3"/>

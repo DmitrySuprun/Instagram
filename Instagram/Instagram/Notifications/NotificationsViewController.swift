@@ -11,7 +11,7 @@ import UIKit
 final class NotificationsViewController: UIViewController {
     // MARK: - Private Constants
     private enum Constants {
-        static let applicationBlueColor = "ApplicationBlue"
+        static let applicationBlueColorName = "ApplicationBlue"
         static let footerLabelText = "See More Suggestions"
         static let notificationsTableViewCellID = "NotificationsTableViewCellID"
         static let emptyTextName = ""
@@ -35,7 +35,7 @@ final class NotificationsViewController: UIViewController {
     private var thisMonthNotifications: [NotificationsCellContent] = []
     private var earlierNotifications: [NotificationsCellContent] = []
     private var suggestedForYouNotifications: [NotificationsCellContent] = []
-    private lazy var content = [
+    private lazy var contents = [
         todayNotifications,
         thisWeakNotifications,
         thisMonthNotifications,
@@ -43,7 +43,7 @@ final class NotificationsViewController: UIViewController {
         suggestedForYouNotifications
     ]
     
-    private let notificationType: [SectionsContentType] = [
+    private let notificationTypes: [SectionsContentType] = [
         .today,
         .thisWeak,
         .thisMoth,
@@ -61,31 +61,34 @@ final class NotificationsViewController: UIViewController {
 // MARK: - UITableViewDelegate
 extension NotificationsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        25
+        20
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let view = UIView()
         let label = UILabel()
-        if notificationType.indices.contains(section) {
-            let type = notificationType[section]
+        if notificationTypes.indices.contains(section) {
+            let type = notificationTypes[section]
             label.text = type.rawValue
         } else {
             label.text = Constants.emptyTextName
         }
         label.font = .boldSystemFont(ofSize: 16)
-        return label
+        label.frame = CGRect(x: 0, y: 0, width: 150, height: 25)
+        view.addSubview(label)
+        return view
     }
 }
 
 // MARK: - UITableViewDataSource
 extension NotificationsViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        notificationType.count
+        notificationTypes.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if notificationType.indices.contains(section) {
-            let type = notificationType[section]
+        if notificationTypes.indices.contains(section) {
+            let type = notificationTypes[section]
             switch type {
             case .today: return todayNotifications.count
             case .thisWeak: return thisWeakNotifications.count
@@ -98,30 +101,10 @@ extension NotificationsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: Constants.notificationsTableViewCellID,
-                                                       for: indexPath) as? NotificationsTableViewCell
+        guard let cell = tableView.dequeueReusableCell(
+            withIdentifier: Constants.notificationsTableViewCellID) as? NotificationsTableViewCell
         else { return UITableViewCell() }
-        
-        cell.avatarImageView.image = UIImage(named: content[indexPath.section][indexPath.row].avatarImageName)
-        cell.contentCellLabel.text = content[indexPath.section][indexPath.row].contentLabelText
-        
-        if content[indexPath.section][indexPath.row].isHiddenCancelButton {
-            cell.cancelButton.isHidden = true
-            cell.contentView.constraints.first(where: {
-                $0.identifier == Constants.cancelButtonConstraintID })?.isActive = false
-        }
-        if content[indexPath.section][indexPath.row].isHiddenFollowButton {
-            cell.followButton.isHidden = true
-            cell.contentView.constraints.first(where: {
-                $0.identifier == Constants.followButtonConstraintID })?.isActive = false
-        }
-        if let image = content[indexPath.section][indexPath.row].postImageName {
-            cell.postImageView.isHidden = false
-            cell.postImageView.image = UIImage(named: image)
-            cell.contentView.constraints.first(where: {
-                $0.identifier == Constants.superViewConstraintID })?.isActive = false
-        }
-        cell.layoutIfNeeded()
+        cell.configure(cellModel: contents[indexPath.section][indexPath.row])
         return cell
     }
 }
