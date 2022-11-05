@@ -13,6 +13,9 @@
 		D538864028FD77780068DF85 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D538863E28FD77780068DF85 /* Main.storyboard */; };
 		D538864228FD777A0068DF85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D538864128FD777A0068DF85 /* Assets.xcassets */; };
 		D538864528FD777A0068DF85 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D538864328FD777A0068DF85 /* LaunchScreen.storyboard */; };
+		D547917429055C8700F6113B /* AccountInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D547917329055C8700F6113B /* AccountInfoViewController.swift */; };
+		D54791772905DFC800F6113B /* ImageCollectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D54791762905DFC800F6113B /* ImageCollectionTableViewCell.swift */; };
+		D547917B2905EC1400F6113B /* StoriesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D547917A2905EC1400F6113B /* StoriesTableViewCell.swift */; };
 		D57449A028FEC7D500460C7B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D574499F28FEC7D500460C7B /* User.swift */; };
 		D57449A328FEC83400460C7B /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = D57449A228FEC83400460C7B /* Post.swift */; };
 		D59F0C0228FFCBFF0092D1B2 /* ColorAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D59F0C0128FFCBFF0092D1B2 /* ColorAssets.xcassets */; };
@@ -30,6 +33,9 @@
 		D538864128FD777A0068DF85 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D538864428FD777A0068DF85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D538864628FD777A0068DF85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D547917329055C8700F6113B /* AccountInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInfoViewController.swift; sourceTree = "<group>"; };
+		D54791762905DFC800F6113B /* ImageCollectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionTableViewCell.swift; sourceTree = "<group>"; };
+		D547917A2905EC1400F6113B /* StoriesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoriesTableViewCell.swift; sourceTree = "<group>"; };
 		D574499F28FEC7D500460C7B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		D57449A228FEC83400460C7B /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		D59F0C0128FFCBFF0092D1B2 /* ColorAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = ColorAssets.xcassets; sourceTree = "<group>"; };
@@ -70,6 +76,7 @@
 			children = (
 				D5C94B3E2900D47400D2229C /* Notifications */,
 				D538863828FD77780068DF85 /* AppDelegate.swift */,
+				D547917529055C8F00F6113B /* AccountInfo */,
 				D538863A28FD77780068DF85 /* SceneDelegate.swift */,
 				D538863C28FD77780068DF85 /* FeedViewController.swift */,
 				D538863E28FD77780068DF85 /* Main.storyboard */,
@@ -80,6 +87,16 @@
 				D538864628FD777A0068DF85 /* Info.plist */,
 			);
 			path = Instagram;
+			sourceTree = "<group>";
+		};
+		D547917529055C8F00F6113B /* AccountInfo */ = {
+			isa = PBXGroup;
+			children = (
+				D547917329055C8700F6113B /* AccountInfoViewController.swift */,
+				D54791762905DFC800F6113B /* ImageCollectionTableViewCell.swift */,
+				D547917A2905EC1400F6113B /* StoriesTableViewCell.swift */,
+			);
+			path = AccountInfo;
 			sourceTree = "<group>";
 		};
 		D57449A128FEC82000460C7B /* Models */ = {
@@ -197,12 +214,15 @@
 			files = (
 				D5C94B3D2900D11400D2229C /* NotificationsTableViewCell.swift in Sources */,
 				D57449A028FEC7D500460C7B /* User.swift in Sources */,
+				D547917429055C8700F6113B /* AccountInfoViewController.swift in Sources */,
 				D538863D28FD77780068DF85 /* FeedViewController.swift in Sources */,
 				D538863928FD77780068DF85 /* AppDelegate.swift in Sources */,
 				D5C94B3B2900D0A600D2229C /* NotificationsViewController.swift in Sources */,
 				D538863B28FD77780068DF85 /* SceneDelegate.swift in Sources */,
+				D54791772905DFC800F6113B /* ImageCollectionTableViewCell.swift in Sources */,
 				D5C94B402900D4AB00D2229C /* NotificationsCellModel.swift in Sources */,
 				D57449A328FEC83400460C7B /* Post.swift in Sources */,
+				D547917B2905EC1400F6113B /* StoriesTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
