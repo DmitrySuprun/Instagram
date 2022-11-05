@@ -31,12 +31,22 @@ class NotificationsTableViewCell: UITableViewCell {
     
     // MARK: - Override Methods
     override func prepareForReuse() {
-        contentView.constraints.forEach { $0.isActive = true }
+        super.prepareForReuse()
         avatarImageView.image = nil
         contentCellLabel.text = nil
         followButton.isHidden = false
         cancelButton.isHidden = false
         postImageView.image = nil
+        contentView.constraints.forEach { constraint in
+            switch constraint.identifier {
+            case Constants.cancelButtonConstraintID,
+                Constants.followButtonConstraintID:
+                constraint.priority = UILayoutPriority.init(rawValue: 1000)
+            case Constants.superViewConstraintID:
+                constraint.priority = UILayoutPriority.init(rawValue: 751)
+            default: break
+            }
+        }
     }
     
     // MARK: - Public Methods
@@ -48,17 +58,17 @@ class NotificationsTableViewCell: UITableViewCell {
         
         if cellModel.isHiddenCancelButton {
             contentView.constraints.first(where: {
-                $0.identifier == Constants.cancelButtonConstraintID })?.isActive = false
+                $0.identifier == Constants.cancelButtonConstraintID })?.priority = UILayoutPriority.init(rawValue: 1)
         }
         if cellModel.isHiddenFollowButton {
             contentView.constraints.first(where: {
-                $0.identifier == Constants.followButtonConstraintID })?.isActive = false
+                $0.identifier == Constants.followButtonConstraintID })?.priority = UILayoutPriority.init(rawValue: 1)
         }
         
         if let image = cellModel.postImageName {
             postImageView.image = UIImage(named: image)
             contentView.constraints.first(where: {
-                $0.identifier == Constants.superViewConstraintID })?.isActive = false
+                $0.identifier == Constants.superViewConstraintID })?.priority = UILayoutPriority.init(rawValue: 1)
         }
         layoutIfNeeded()
     }
